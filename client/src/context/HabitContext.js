@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useAuth } from './AuthContext.js';
-
+import apiUrl from '../config';
 const HabitContext = createContext(undefined);
 
 const GUEST_HABITS_KEY = 'guest_habits';
@@ -13,7 +13,7 @@ export const HabitProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { isAuthenticated, checkAuth } = useAuth();
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 
   // Set up axios with credentials
   axios.defaults.withCredentials = true;

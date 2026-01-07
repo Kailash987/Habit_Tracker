@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-
+import apiUrl from '../config';
 const AuthContext = createContext(undefined);
 
 export const AuthProvider = ({ children }) => {
@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  
 
   // Set up axios with credentials
   axios.defaults.withCredentials = true;

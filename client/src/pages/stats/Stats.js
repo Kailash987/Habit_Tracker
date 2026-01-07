@@ -6,6 +6,7 @@ import LoadingSpinner from '../../components/ui/LoadingSpinner.js';
 import { Bar, Line } from 'react-chartjs-2';
 import { useHabits } from '../../context/HabitContext.js';
 import { useAuth } from '../../context/AuthContext.js';
+import apiUrl from '../../config';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -49,7 +50,7 @@ const Stats = () => {
   const [streakStats, setStreakStats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
   const { habits } = useHabits();
   const { isAuthenticated } = useAuth();
 

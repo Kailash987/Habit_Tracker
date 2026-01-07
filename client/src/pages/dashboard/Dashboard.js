@@ -8,14 +8,14 @@ import Button from '../../components/ui/Button.js';
 import LoadingSpinner from '../../components/ui/LoadingSpinner.js';
 import HabitCard from '../habits/HabitCard.js';
 import axios from 'axios';
-
+import apiUrl from '../../config';
 const Dashboard = () => {
   const { habits, isLoading, fetchHabits } = useHabits();
   const { isAuthenticated } = useAuth();
   const [stats, setStats] = useState(null);
   const [statsLoading, setStatsLoading] = useState(true);
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 
   useEffect(() => {
     if (isAuthenticated) {
